@@ -7,8 +7,8 @@ locals {
   key_vault_secreat_name="DBpassword"
   ASP_name="DevOpsInHybridEnv-plan"
   web_app_name="DevOpsInHybridEnv"
-  sql_server_name="hybridenv-server"
-  sql_db_name="DevOpsInHybridEnv-db"
+  sql_server_name="hybrid-demo-server"
+  sql_db_name="Hybrid-Demo-db"
   sql_admin_user_name="dbadmin"
 
 }
