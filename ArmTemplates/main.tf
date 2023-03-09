@@ -37,7 +37,7 @@ resource "azurerm_app_service_plan" "app_plan" {
     size = "B1"
   }
 }
-/*resource "azurerm_log_analytics_workspace" "appworkspace" {
+resource "azurerm_log_analytics_workspace" "appworkspace" {
   name                = "appworkspace41901"
   location            = azurerm_resource_group.app_grp.location
   resource_group_name = azurerm_resource_group.app_grp.name
@@ -46,17 +46,17 @@ resource "azurerm_app_service_plan" "app_plan" {
   depends_on = [
     azurerm_resource_group.app_grp
   ]
-} */
+} 
 
 resource "azurerm_application_insights" "appinsights" {
   name                = "appinsights41901"
   location            = azurerm_resource_group.app_grp.location
   resource_group_name = azurerm_resource_group.app_grp.name
   application_type    = "web"
-  workspace_id = "19d65f23-7932-4ba8-a928-be0d2af098ca"
- /* depends_on = [
+  workspace_id = azurerm_log_analytics_workspace.appworkspace.id
+  depends_on = [
     azurerm_log_analytics_workspace.appworkspace
-  ] */
+  ] 
 }
 resource "azurerm_app_service" "webapp" {
   name                = local.web_app_name
