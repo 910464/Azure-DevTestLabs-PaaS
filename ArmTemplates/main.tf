@@ -54,9 +54,9 @@ resource "azurerm_application_insights" "appinsights" {
   resource_group_name = azurerm_resource_group.app_grp.name
   application_type    = "web"
   workspace_id = "19d65f23-7932-4ba8-a928-be0d2af098ca"
-  depends_on = [
+ /* depends_on = [
     azurerm_log_analytics_workspace.appworkspace
-  ]
+  ] */
 }
 resource "azurerm_app_service" "webapp" {
   name                = local.web_app_name
