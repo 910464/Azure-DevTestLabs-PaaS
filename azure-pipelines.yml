@@ -58,11 +58,6 @@ jobs:
       TargetFolder: $(build.artifactstagingdirectory)\FunctionalTests
       flattenFolders: true
   - task: CopyFiles@2
-    displayName: Copy Terraform templates
-    inputs:
-      SourceFolder: ArmTemplates
-      TargetFolder: $(build.artifactstagingdirectory)
-  - task: CopyFiles@2
     displayName: Copy Database File
     inputs:
       Contents: '**\*.dacpac'
